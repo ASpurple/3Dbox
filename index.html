@@ -131,8 +131,9 @@
 		for(let i = 0;i < imgs.length;i++){
 			imgs[i].onload = function(){
 			imgNum++;
+			alert(imgNum);
 				if(imgNum == imgs.length){
-					document.getElementById("box").className = "box";
+					document.getElementById("box").className = "-box";
 				}
 			}
 		}
