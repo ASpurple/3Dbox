@@ -2,138 +2,131 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>3Dbox</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta charset="UTF-8">
+	<title>simulate</title>
 	<style>
-		body{
-			background-color: #1b829c;
+		html{
+			font-size: 18px;
 		}
-		.box{
-			position: relative;
-			width: 300px; height: 300px;
-			margin: 150px auto;
-			transform-style: preserve-3d;
-			animation: am 20s;
-			-moz-animation: am 20s;
-			-webkit-animation: am 20s;
-			animation-iteration-count:infinite;
-			-webkit-animation-iteration-count:infinite;
-			animation-direction: alternate;
-			-webkit-animation-direction: alternate;
+		.wrap{
+			width: 60%; height: auto;
+			margin: 3rem auto;
+			padding: 1rem; 
+			border: 1px dotted #888;
 		}
-		img{
-			position: absolute;
-			width: 300px; height: 300px;
-			left: 0; top: 0;
-			backface-visibility: hidden;
+		.detail{
+			width: 60%; height: auto;
+			display: none;
+			margin: 3rem auto;
 		}
-		.m1{
-			transform: rotateY(180deg)translateZ(150px);;
-			-webkit-transform: rotateY(180deg)translateZ(150px);;
-			-moz-transform: rotateY(180deg)translateZ(150px);;
+		input{
+			width: 35%; height: 1.5rem;
+			outline: none;
+			margin-right: 2rem;
 		}
-		.m2{
-			transform: rotateY(90deg)translateZ(150px);;
-			-webkit-transform: rotateY(90deg)translateZ(150px);;
-			-moz-transform: rotateY(90deg)translateZ(150px);;
+		button{
+			width: 3rem; height: 1.5rem;
 		}
-		.m3{
-			transform: rotateY(-90deg)translateZ(150px);;
-			-webkit-transform: rotateY(-90deg)translateZ(150px);;
-			-moz-transform: rotateY(-90deg)translateZ(150px);;
-		}
-		.m4{
-			transform: rotateX(90deg)translateZ(150px);;
-			-webkit-transform: rotateX(90deg)translateZ(150px);;
-			-moz-transform: rotateX(90deg)translateZ(150px);;
-		}
-		.m5{
-			transform: rotateX(-90deg)translateZ(150px);;
-			-webkit-transform: rotateX(-90deg)translateZ(150px);;
-			-moz-transform: rotateX(-90deg)translateZ(150px);;
-		}
-		.m6{
-			transform: translateZ(150px);
-			-webkit-transform: translateZ(150px);
-			-moz-transform: translateZ(150px);
-		}
-		@keyframes am
-		{
-			0%{
-				transform:rotateX(0deg)rotateY(0deg);
-				-webkit-transform:rotateX(0deg)rotateY(0deg);
-				-moz-transform:rotateX(0deg)rotateY(0deg);
-			}
-			50%{
-				transform:rotateX(720deg)rotateY(720deg);
-				-webkit-transform:rotateX(720deg)rotateY(720deg);
-				-moz-transform:rotateX(720deg)rotateY(720deg);
-			}
-			100%{
-				transform:rotateX(360deg)rotateZ(360deg);
-				-webkit-transform:rotateX(360deg)rotateZ(360deg);
-				-moz-transform:rotateX(360deg)rotateZ(360deg);
-			}
-		}
-		@-moz-keyframes am
-		{
-			0%{
-				transform:rotateX(0deg)rotateY(0deg);
-				-webkit-transform:rotateX(0deg)rotateY(0deg);
-				-moz-transform:rotateX(0deg)rotateY(0deg);
-			}
-			50%{
-				transform:rotateX(720deg)rotateY(720deg);
-				-webkit-transform:rotateX(720deg)rotateY(720deg);
-				-moz-transform:rotateX(720deg)rotateY(720deg);
-			}
-			100%{
-				transform:rotateX(360deg)rotateZ(360deg);
-				-webkit-transform:rotateX(360deg)rotateZ(360deg);
-				-moz-transform:rotateX(360deg)rotateZ(360deg);
-			}
-		}
-		@-webkit-keyframes am
-		{
-			0%{
-				transform:rotateX(0deg)rotateY(0deg);
-				-webkit-transform:rotateX(0deg)rotateY(0deg);
-				-moz-transform:rotateX(0deg)rotateY(0deg);
-			}
-			50%{
-				transform:rotateX(720deg)rotateY(720deg);
-				-webkit-transform:rotateX(720deg)rotateY(720deg);
-				-moz-transform:rotateX(720deg)rotateY(720deg);
-			}
-			100%{
-				transform:rotateX(360deg)rotateZ(360deg);
-				-webkit-transform:rotateX(360deg)rotateZ(360deg);
-				-moz-transform:rotateX(360deg)rotateZ(360deg);
-			}
-		}
-
 	</style>
 </head>
 <body>
-	<div id = "box" class = "_box">
-		<img src="http://img.taopic.com/uploads/allimg/121005/219049-12100519120016.jpg" alt="" class = "m1">
-		<img src="http://pic.jj20.com/up/allimg/1011/09121G22R6/1F912122R6-1.jpg" alt="" class = "m2">
-		<img src="http://t2.27270.com/uploads/tu/201411/102/3.jpg" alt="" class = "m3">
-		<img src="http://y0.ifengimg.com/e86416e8b80ad6fe/2015/0821/rdn_55d6e89adfc73.jpg" alt="" class = "m4">
-		<img src="http://pic.pp3.cn/uploads/20121001j/bz/162.jpg" alt="" class = "m5">
-		<img src="http://img2.woyaogexing.com/2017/08/11/8d171c61623c247c!600x600.jpg" alt="" class = "m6">
+	<div class = "wrap">
+		<input type="number" id = "num" placeholder="请输入购买数量。。。"><button id = "buy">购买</button>&nbsp;&nbsp;<span id = "suc"></span>
+		<br><br>
+		<button id = "run">RUN</button>
+		<span id = "result"></span>
 	</div>
+	<div class = "detail" id = "detail"></div>
+
+
 	<script>
-		/*判断图片是否全部加载完毕，如加载完毕改变容器类名执行CSS动画*/
-		var imgs = document.getElementsByTagName("img");
-		var imgNum = 0;
-		for(let i = 0;i < imgs.length;i++){
-			imgs[i].onload = function(){
-				imgNum++;
-				if(imgNum == imgs.length){
-					document.getElementById("box").className = "box";
+		/*=========================================================*/
+		
+		function create(){
+			var arr  = [];
+			var arrb = [];
+			var n = 0;
+			while(arr.length<5){
+				n = Math.ceil(Math.random()*35);
+				if(arr.indexOf(n) == -1 && n != 0){
+					arr.push(n);
 				}
 			}
+			arr.sort(function(a,b){return a - b});
+			while(arrb.length<2){
+				n = Math.ceil(Math.random()*12);
+				if(arrb.indexOf(n) == -1 && n != 0){
+					arrb.push(n);
+				}
+			}
+			arrb.sort(function(a,b){return a - b});
+			return arr.concat(arrb);
 		}
+
+		/*=========================================================*/
+
+		function buy(n){
+			var arr = [];
+			while(arr.length < n){
+				arr.push(create());
+			}
+			return arr;
+		}
+
+		/*=========================================================*/
+
+		function compare(arrBuy,arrRun){
+			var dat = [];
+			dat[0] = 0;
+			var jud = true;
+			for(var i = 0;i < arrBuy.length;i++){
+				for(var j = 0;j < arrRun.length && jud == true;j++){
+					if(arrRun[j] != arrBuy[i][j]){
+						jud = false;
+					}
+				}
+				if(jud == true){
+					dat[0]++;
+					dat.push(i+1);
+				}
+				jud = true;
+			}
+			return dat;
+		}
+		/*=========================================================*/
+		var run = [];
+		var res = [];
+		var dat = [];
+		/*=========================================================*/
+		document.getElementById("buy").onclick = function(){
+			var n = parseInt(document.getElementById("num").value);
+			document.getElementById("detail").innerHTML = "";
+			res = buy(n);
+			n = null;
+			if(document.getElementById("num").value == ""){
+				alert("请输入购买数量！");
+				return;
+			}
+			document.getElementById("suc").innerHTML = "购买成功！<a href = 'javascript:void(0)'>查看号码（购买量较大请勿点击）</a>"
+			document.getElementsByTagName("a")[0].onclick = function(){
+				for(var i = 0;i < res.length;i++){
+					document.getElementById("detail").innerHTML = document.getElementById("detail").innerHTML+(i+1)+":&nbsp;&nbsp;"+res[i].join("==")+"<br /><br />"
+				}
+				document.getElementById("detail").style.display = "block";
+			}
+			document.getElementById("num").value = "";
+		}
+		/*=========================================================*/
+		document.getElementById("run").onclick = function(){
+			run = create();
+			dat = compare(res,run);
+			document.getElementById("result").innerHTML = "开出的号码为："+run.join("|")+"；"+"中了"+dat[0]+"注；"+"分别为第"+dat.splice(1,dat.length-1).join(",")+"注；"
+		}
+
 	</script>
 </body>
 </html>
